@@ -1,4 +1,4 @@
-const CACHE_NAME = '20y-pulse-v11108';
+const CACHE_NAME = '20y-pulse-v11109';
 const urlsToCache = [
   './',
   './index.html?v=11108',
