@@ -230,9 +230,9 @@
 
   <script>
     // NAV FIX V11.10.8
-    document.querySelectorAll('.nav.btn').forEach(btn => {
+    document.querySelectorAll('.nav  .btn').forEach(btn => {
       btn.addEventListener('click', function() {
-        document.querySelectorAll('.nav.btn').forEach(b => b.classList.remove('active'));
+        document.querySelectorAll('.nav  .btn').forEach(b => b.classList.remove('active'));
         document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
         this.classList.add('active');
         document.getElementById(this.dataset.tab).classList.add('active');
@@ -315,7 +315,7 @@
     const sonido20y = document.getElementById('sonidoNotif');
     sonido20y.volume = 0.8;
     function reproducirSonido() {
-      sonido20y.currentTime = 0;
+      sonido20y.currentTime = 8;
       sonido20y.play().catch(()=>{});
     }
     document.addEventListener('click', () => {
