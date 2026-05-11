@@ -13,43 +13,41 @@
   <style>
     *{margin:0;padding:0;box-sizing:border-box}
     body{background:#000;color:#0f0;font-family:monospace;padding:0;margin:0}
-    h1{text-align:center;color:#0f0;margin:8px 0;font-size:20px}
+    h1{text-align:center;color:#0f0;margin:12px 0;font-size:20px}
     h2{margin:15px 0 10px 0;font-size:18px;color:#0f0}
     h3{margin:10px 0;font-size:16px;color:#0a0}
-  .nav{display:flex;gap:4px;padding:6px;background:#111;position:sticky;top:0;z-index:100;overflow-x:auto;-webkit-overflow-scrolling:touch}
-  .nav::-webkit-scrollbar{display:none}
-  .nav.btn{flex-shrink:0;padding:6px 12px;background:#111;border:1px solid #0f0;color:#0f0;cursor:pointer;text-align:center;font-size:11px;font-family:monospace;border-radius:4px;white-space:nowrap}
-  .nav.btn.active{background:#0f0;color:#000;font-weight:bold}
-  .tab{display:none;padding:15px}
-  .tab.active{display:block}
-  .card{border:2px solid #0f0;padding:12px;margin:12px 0;border-radius:8px;background:#000}
-    input,textarea,button,select{background:#111;border:1px solid #0f0;color:#0f0;padding:8px;width:100%;margin:4px 0;font-family:monospace;box-sizing:border-box;font-size:14px}
+   .nav{display:flex;gap:4px;padding:8px;background:#000;position:sticky;top:0;z-index:100;flex-wrap:wrap}
+   .nav.btn{flex:1;padding:8px 4px;background:#111;border:1px solid #0f0;color:#0f0;cursor:pointer;text-align:center;min-width:70px;font-size:10px;font-family:monospace;border-radius:4px}
+   .nav.btn.active{background:#0f0;color:#000;font-weight:bold}
+   .tab{display:none;padding:20px}
+   .tab.active{display:block}
+   .card{border:2px solid #0f0;padding:15px;margin:15px 0;border-radius:8px;background:#000}
+    input,textarea,button,select{background:#111;border:1px solid #0f0;color:#0f0;padding:8px;width:100%;margin:5px 0;font-family:monospace;box-sizing:border-box}
     button{background:#0f0;color:#000;font-weight:bold;cursor:pointer}
     button:active{background:#0a0}
     button.secondary{background:#333;color:#0f0}
     button.danger{background:#500;color:#f00}
-  .row{display:flex;gap:8px;flex-wrap:wrap}
-  .row>*{flex:1;min-width:140px}
-  .kpi{display:flex;justify-content:space-between;margin:6px 0;font-size:14px}
-  .orden{background:#110000;border:2px solid #f00;padding:12px;margin:12px 0}
-  .orden h3{color:#f00;margin:0 0 8px 0}
-  .mision{background:#001100;border:2px solid #0a0;padding:12px;margin:12px 0;text-align:center}
-  .spith{background:#001100;border-left:4px solid #0f0;padding:12px;margin:12px 0;font-style:italic;font-size:15px;line-height:1.4}
-  .coach-box{background:#001a00;border-left:4px solid #0a0;padding:12px;margin:12px 0}
-  .objetivo{border:1px solid #0f0;padding:8px;margin:8px 0;border-radius:4px;background:#111}
-  .version{position:fixed;bottom:8px;right:8px;font-size:10px;opacity:0.5;color:#0f0}
-  .badge{display:inline-block;background:#0f0;color:#000;padding:2px 8px;font-size:10px;font-weight:bold;border-radius:4px}
-  .hidden{display:none}
-    label{display:block;margin:6px 0;font-size:14px}
+   .row{display:flex;gap:10px}
+   .row>*{flex:1}
+   .kpi{display:flex;justify-content:space-between;margin:8px 0;font-size:14px}
+   .progress{background:#111;height:8px;border-radius:4px;margin:8px 0}
+   .progress-bar{background:#0f0;height:100%;border-radius:4px;transition:width 0.3s}
+   .orden{background:#110000;border:2px solid #f00;padding:15px;margin:15px 0}
+   .orden h3{color:#f00;margin:0 0 10px 0}
+   .mision{background:#001100;border:2px solid #0a0;padding:15px;margin:15px 0;text-align:center}
+   .spith{background:#001100;border-left:4px solid #0f0;padding:15px;margin:15px 0;font-style:italic;line-height:1.6}
+   .coach-box{background:#001a00;border-left:4px solid #0a0;padding:15px;margin:15px 0;line-height:1.6}
+   .objetivo{border:1px solid #0f0;padding:10px;margin:10px 0;border-radius:4px;background:#111}
+   .version{position:fixed;bottom:8px;right:8px;font-size:10px;opacity:0.5;color:#0f0}
+   .badge{display:inline-block;background:#0f0;color:#000;padding:2px 8px;font-size:10px;font-weight:bold;border-radius:4px}
+   .hidden{display:none}
+    label{display:block;margin:8px 0}
     input[type="checkbox"]{width:auto;margin-right:8px}
-  .plan-q{margin-bottom:15px}
-  .plan-q input{margin:2px 0}
-  .progress{width:100%;height:8px;background:#333;border-radius:4px;overflow:hidden;margin:4px 0}
-  .progress-bar{height:100%;background:#0f0;transition:width 0.3s}
   </style>
 </head>
 <body>
   <h1>20Y PULSE V11.10.8</h1>
+
   <nav class="nav">
     <button class="btn active" data-tab="inicio">INICIO</button>
     <button class="btn" data-tab="plan">PLAN</button>
@@ -59,7 +57,9 @@
     <button class="btn" data-tab="ejecucion">EJECUCIÓN</button>
     <button class="btn" data-tab="coach">COACH</button>
     <button class="btn" data-tab="datos">DATOS</button>
+    <button class="btn" data-tab="perfil">PERFIL</button>
   </nav>
+
   <main>
     <section id="inicio" class="tab active">
       <div class="card">
@@ -72,9 +72,11 @@
         <div class="kpi"><span>Puntos 20Y:</span><span id="puntos">0</span></div>
         <div class="kpi"><span>Nivel:</span><span id="nivel">1/5</span></div>
         <div class="kpi"><span>Stability:</span><span id="stability">0%</span></div>
+        <div class="kpi"><span>CEO:</span><span id="ceo-name">CEO 20Y: SAMUEL</span></div>
         <button onclick="ejecutarCerebro()">EJECUTAR CEREBRO20Y</button>
       </div>
     </section>
+
     <section id="plan" class="tab">
       <div class="card">
         <h2>PLAN ESTRATÉGICO 20Y 2026</h2>
@@ -82,33 +84,18 @@
           <strong>MISIÓN ANUAL:</strong><br>
           <input id="misionAnual" placeholder="Desbloquear Nivel 5 LEYENDA">
         </div>
-        <div class="plan-q card">
-          <h3>Q1 ENE-MAR</h3>
-          <input id="q1_1" placeholder="1. Finanzas: 10K€">
-          <input id="q1_2" placeholder="2. Salud: Dormir 7h">
-          <input id="q1_3" placeholder="3. Marca: 10 posts">
+        <div class="row">
+          <div class="card"><h3>Q1 ENE-MAR</h3><textarea id="q1" rows="3" placeholder="Finanzas: 10K€"></textarea></div>
+          <div class="card"><h3>Q2 ABR-JUN</h3><textarea id="q2" rows="3" placeholder="Salud: 8% grasa"></textarea></div>
         </div>
-        <div class="plan-q card">
-          <h3>Q2 ABR-JUN</h3>
-          <input id="q2_1" placeholder="1. Finanzas: 25K€">
-          <input id="q2_2" placeholder="2. Salud: 8% grasa">
-          <input id="q2_3" placeholder="3. Marca: 50K reach">
-        </div>
-        <div class="plan-q card">
-          <h3>Q3 JUL-SEP</h3>
-          <input id="q3_1" placeholder="1. Finanzas: 50K€">
-          <input id="q3_2" placeholder="2. Salud: Ironman">
-          <input id="q3_3" placeholder="3. Marca: 100K reach">
-        </div>
-        <div class="plan-q card">
-          <h3>Q4 OCT-DIC</h3>
-          <input id="q4_1" placeholder="1. Finanzas: 100K€">
-          <input id="q4_2" placeholder="2. Salud: Mantener">
-          <input id="q4_3" placeholder="3. Legado: Libro 20Y">
+        <div class="row">
+          <div class="card"><h3>Q3 JUL-SEP</h3><textarea id="q3" rows="3" placeholder="Marca: 100K reach"></textarea></div>
+          <div class="card"><h3>Q4 OCT-DIC</h3><textarea id="q4" rows="3" placeholder="Legado: Libro 20Y"></textarea></div>
         </div>
         <button onclick="guardarPlan()">GUARDAR PLAN</button>
       </div>
     </section>
+
     <section id="orden" class="tab">
       <div class="card">
         <h2>RITUALES 20Y + HÁBITOS CUSTOM</h2>
@@ -148,6 +135,7 @@
         <button onclick="guardarRituales()">GUARDAR RITUALES</button>
       </div>
     </section>
+
     <section id="objetivos" class="tab">
       <div class="card">
         <h2>OBJETIVOS Y METAS 20Y</h2>
@@ -169,14 +157,16 @@
         </div>
       </div>
     </section>
+
     <section id="spith" class="tab">
       <div class="card">
         <h2>SPITH 20Y</h2>
-        <div class="spith" id="spithTexto">BUILD CARS. MASTER DRIVING. Son las 6AM y ya gané. Mientras ellos duermen, yo construyo mi legado. Si fallo 1 regla hoy, vuelvo a Día 0. Skin in the game.</div>
+        <div class="spith" id="spithTexto">BUILD CARS. MASTER DRIVING. Son las 6AM y ya gané. Mientras ellos duermen, yo construyo mi legado físico, mental y financiero. La disciplina de hoy es la libertad de mañana. Si fallo 1 regla hoy, vuelvo a Día 0. No hay grises. Skin in the game total.</div>
         <button onclick="generarSpith()">GENERAR SPITH</button>
-        <div id="historialSpith" style="margin-top:10px;font-size:12px;opacity:0.7"></div>
+        <div id="historialSpith"></div>
       </div>
     </section>
+
     <section id="ejecucion" class="tab">
       <div class="card">
         <h2>EJECUCIÓN DIARIA 20Y</h2>
@@ -187,12 +177,13 @@
           <div class="kpi"><span>12PM Score:</span><span id="c12pm">❌</span></div>
           <div class="kpi"><span>22PM Cierre:</span><span id="c22pm">❌</span></div>
           <div class="kpi"><span>GitHub Pages:</span><span id="cdeploy">✅</span></div>
-          <div class="kpi"><span>PWA v24-7:</span><span id="cpwa">✅</span></div>
+          <div class="kpi"><span>PWA v11108:</span><span id="cpwa">✅</span></div>
         </div>
         <button onclick="ejecutarCerebro()">EJECUTAR CEREBRO20Y</button>
         <button class="danger" onclick="hardReset()">HARD RESET DÍA 0</button>
       </div>
     </section>
+
     <section id="coach" class="tab">
       <div class="card">
         <h2>COACH 20Y</h2>
@@ -204,6 +195,7 @@
         <div id="historialCoach" style="max-height:200px;overflow-y:auto;margin-top:10px"></div>
       </div>
     </section>
+
     <section id="datos" class="tab">
       <div class="card">
         <h2>DATOS 20Y</h2>
@@ -214,22 +206,41 @@
         <button class="danger" onclick="factoryReset()">BORRAR TODO</button>
       </div>
     </section>
+
+    <section id="perfil" class="tab">
+      <div class="card">
+        <h2>PERFIL CEO 20Y</h2>
+        <input type="text" id="nombre" placeholder="Nombre CEO">
+        <input type="number" id="edad" placeholder="Edad">
+        <input type="text" id="ciudad" placeholder="Ciudad Base">
+        <input type="text" id="lema" placeholder="Lema Personal 20Y">
+        <textarea id="vision" rows="4" placeholder="Visión 5 años..."></textarea>
+        <input type="url" id="foto" placeholder="URL Foto Perfil">
+        <button onclick="guardarPerfil()">GUARDAR PERFIL</button>
+        <div class="kpi"><span>CEO Actual:</span><span id="ceoNombreView">SAMUEL</span></div>
+      </div>
+    </section>
   </main>
+
   <div class="version">V11.10.8 | SW v24-7</div>
+
   <audio id="sonidoNotif" preload="auto">
     <source src="data:audio/wav;base64,UklGRl9vT19XQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YU..." type="audio/wav">
   </audio>
+
   <script>
-    document.querySelectorAll('.btn').forEach(btn => {
+    // NAV FIX V11.10.8
+    document.querySelectorAll('.nav.btn').forEach(btn => {
       btn.addEventListener('click', function() {
-        document.querySelectorAll('.btn').forEach(b => b.classList.remove('active'));
+        document.querySelectorAll('.nav.btn').forEach(b => b.classList.remove('active'));
         document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
         this.classList.add('active');
         document.getElementById(this.dataset.tab).classList.add('active');
-        this.scrollIntoView({behavior:'smooth',block:'nearest',inline:'center'});
       });
     });
-    if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js?v=24-7');
+
+    if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js');
+
     const cerebro = {
       version: "11.10.8",
       dia: parseInt(localStorage.getItem('dia20y') || '1'),
@@ -240,27 +251,35 @@
       habitosCheck: JSON.parse(localStorage.getItem('habitosCheck20y') || '[false,false,false]'),
       objetivos: JSON.parse(localStorage.getItem('obj20y') || '[]'),
       spiths: JSON.parse(localStorage.getItem('spiths20y') || '[]'),
+
       check_6am() { return r1.checked && r2.checked && r3.checked; },
       check_habitos() { return this.habitosCheck.every(v => v === true); },
       check_12pm() { return parseInt(calor.value) >= 7 && comida.checked; },
       check_22pm() { return post.checked && reporte.checked; },
+
       calcular_stability() {
-        const checks = {'6am': this.check_6am(),'habitos': this.check_habitos(),'12pm': this.check_12pm(),'22pm': this.check_22pm(),'deploy': true,'pwa': true};
+        const checks = {
+          '6am': this.check_6am(),
+          'habitos': this.check_habitos(),
+          '12pm': this.check_12pm(),
+          '22pm': this.check_22pm(),
+          'deploy': true,
+          'pwa': true
+        };
         c6am.textContent = checks['6am']? '✅' : '❌';
         chab.textContent = checks['habitos']? '✅' : '❌';
         c12pm.textContent = checks['12pm']? '✅' : '❌';
         c22pm.textContent = checks['22pm']? '✅' : '❌';
         return Object.values(checks).every(v => v)? Math.min(10, this.dia) : 0;
       },
+
       save() {
         localStorage.setItem('dia20y', this.dia);
         localStorage.setItem('puntos20y', this.puntos);
         localStorage.setItem('mision20y', this.mision);
         this.plan.mision = misionAnual.value;
-        this.plan.q1 = [q1_1.value, q1_2.value, q1_3.value];
-        this.plan.q2 = [q2_1.value, q2_2.value, q2_3.value];
-        this.plan.q3 = [q3_1.value, q3_2.value, q3_3.value];
-        this.plan.q4 = [q4_1.value, q4_2.value, q4_3.value];
+        this.plan.q1 = q1.value; this.plan.q2 = q2.value;
+        this.plan.q3 = q3.value; this.plan.q4 = q4.value;
         localStorage.setItem('plan20y', JSON.stringify(this.plan));
         this.habitos = [habito1.value, habito2.value, habito3.value];
         this.habitosCheck = [h1check.checked, h2check.checked, h3check.checked];
@@ -269,35 +288,30 @@
         localStorage.setItem('obj20y', JSON.stringify(this.objetivos));
         localStorage.setItem('notas20y', notas.value);
       },
+
       load() {
         dia.textContent = this.dia;
         puntos.textContent = this.puntos;
         misionView.textContent = this.mision;
         misionAnual.value = this.plan.mision || '';
-        if(this.plan.q1){ q1_1.value=this.plan.q1[0]||''; q1_2.value=this.plan.q1[1]||''; q1_3.value=this.plan.q1[2]||''; }
-        if(this.plan.q2){ q2_1.value=this.plan.q2[0]||''; q2_2.value=this.plan.q2[1]||''; q2_3.value=this.plan.q2[2]||''; }
-        if(this.plan.q3){ q3_1.value=this.plan.q3[0]||''; q3_2.value=this.plan.q3[1]||''; q3_3.value=this.plan.q3[2]||''; }
-        if(this.plan.q4){ q4_1.value=this.plan.q4[0]||''; q4_2.value=this.plan.q4[1]||''; q4_3.value=this.plan.q4[2]||''; }
+        q1.value = this.plan.q1 || ''; q2.value = this.plan.q2 || '';
+        q3.value = this.plan.q3 || ''; q4.value = this.plan.q4 || '';
         habito1.value = this.habitos[0]; habito2.value = this.habitos[1]; habito3.value = this.habitos[2];
         h1check.checked = this.habitosCheck[0]; h2check.checked = this.habitosCheck[1]; h3check.checked = this.habitosCheck[2];
         notas.value = localStorage.getItem('notas20y') || '';
         stability.textContent = this.calcular_stability() * 10 + '%';
         this.renderObj();
-        this.renderSpithHist();
       },
+
       renderObj() {
         listaObjetivos.innerHTML = '';
         this.objetivos.forEach((o,i) => {
           const pct = Math.min(100, (o.actual/o.meta)*100);
           listaObjetivos.innerHTML += `<div class="objetivo"><strong>${o.titulo}</strong><div class="progress"><div class="progress-bar" style="width:${pct}%"></div></div><div class="kpi"><span>${o.actual}/${o.meta}</span><span>${o.cat}</span></div></div>`;
         });
-      },
-      renderSpithHist() {
-        if(this.spiths.length > 0){
-          historialSpith.innerHTML = '<strong>Últimos SPITH:</strong><br>' + this.spiths.slice(0,3).map(s => `• ${s.substring(0,50)}...`).join('<br>');
-        }
       }
     };
+
     const sonido20y = document.getElementById('sonidoNotif');
     sonido20y.volume = 0.8;
     function reproducirSonido() {
@@ -307,6 +321,7 @@
     document.addEventListener('click', () => {
       sonido20y.play().then(() => sonido20y.pause()).catch(()=>{});
     }, { once: true });
+
     function activarNotificaciones() {
       if (!('Notification' in window)) return alert('No soportado');
       Notification.requestPermission().then(p => {
@@ -324,7 +339,10 @@
       if (ahora > spith8am) spith8am.setDate(spith8am.getDate()+1);
       setTimeout(() => {
         reproducirSonido();
-        new Notification('20Y PULSE - SPITH 6AM', {body: 'BUILD CARS. MASTER DRIVING. Ejecuta rituales 6AM.',icon: 'icon-192.png', vibrate: [200,100,200], tag: 'spith'});
+        new Notification('20Y PULSE - SPITH 6AM', {
+          body: 'BUILD CARS. MASTER DRIVING. Ejecuta rituales 6AM.',
+          icon: 'icon-192.png', vibrate: [200,100,200], tag: 'spith'
+        });
         programarNotificaciones();
       }, spith8am - ahora);
       const stability8pm = new Date(); stability8pm.setHours(20,0,0,0);
@@ -332,16 +350,23 @@
       setTimeout(() => {
         reproducirSonido();
         const s = cerebro.calcular_stability() * 10;
-        new Notification('20Y PULSE - STABILITY 22PM', {body: `Stability: ${s}%. Cierra 22PM AHORA o Hard Reset.`,icon: 'icon-192.png', vibrate: [300,100,300], tag: 'stability', requireInteraction: true});
+        new Notification('20Y PULSE - STABILITY 22PM', {
+          body: `Stability: ${s}%. Cierra 22PM AHORA o Hard Reset.`,
+          icon: 'icon-192.png', vibrate: [300,100,300], tag: 'stability', requireInteraction: true
+        });
       }, stability8pm - ahora);
     }
     function testNotificacion() {
       if (Notification.permission === 'granted') {
         reproducirSonido();
-        new Notification('20Y PULSE TEST 🔊', {body: 'Sonido activo. SPITH 8AM + STABILITY 8PM.',icon: 'icon-192.png', vibrate: [200,100,200]});
+        new Notification('20Y PULSE TEST 🔊', {
+          body: 'Sonido activo. SPITH 8AM + STABILITY 8PM.',
+          icon: 'icon-192.png', vibrate: [200,100,200]
+        });
       } else alert('Activa notificaciones primero');
     }
-    function guardarPlan() { cerebro.save(); alert('Plan guardado. 3 objetivos x Q'); }
+
+    function guardarPlan() { cerebro.save(); alert('Plan guardado'); }
     function guardarRituales() { cerebro.save(); alert('Rituales guardados. Stability: '+cerebro.calcular_stability()*10+'%'); }
     function ejecutarCerebro() {
       const s = cerebro.calcular_stability();
@@ -360,31 +385,50 @@
       if (objId.value) cerebro.objetivos[objId.value] = o; else cerebro.objetivos.push(o);
       cerebro.save(); cerebro.renderObj(); cancelarObj();
     }
+    
     function generarSpith() {
       const spiths = [
-        `BUILD CARS. MASTER DRIVING. Son las 6AM y ya gané. Mientras ellos duermen, yo construyo mi legado. Si fallo 1 regla hoy, vuelvo a Día 0. Skin in the game.`,
-        `Disciplina antes que motivación. Motivación es para débiles. Yo ejecuto aunque llueva fuego. 6AM: meditar, leer, sudar. 12PM: score calor 10. 22PM: reporte hecho. Sin excusas.`,
-        `Día 0 duele. Por eso funciona. El dolor de hoy es el precio de mi Nivel 5 LEYENDA. Cada check verde es un ladrillo. Cada check rojo es traición. Elijo construir.`,
-        `6AM O PIERDES. El mundo no espera. O lideras tu mañana o tu mañana te entierra. Estoy en guerra contra mi versión de ayer. Hoy gano yo.`,
-        `HARD RESET no es castigo, es poder. Poder de empezar de cero cuando fallé. Poder de no mentirme. Si rompo el pacto, pago el precio: Día 0. Y vuelvo más fuerte.`,
-        `No compito contra nadie. Compito contra el SAMUEL que se rinde a las 6:05AM. Contra el que pospone. Contra el que dice "mañana". Ese tipo muere hoy. Yo vivo.`,
-        `Mi cuerpo es mi empresa. Mi mente es el CEO. Mis hábitos son los empleados. Si un empleado no rinde, se despide. Hoy despido a la pereza, contrato a la ejecución.`,
-        `100K€ no caen del cielo. 8% grasa no es genética. 100K reach no es suerte. Es Stability 100% por 90 días. Es hacer lo que dije que haría cuando dije que lo haría.`
+        `BUILD CARS. MASTER DRIVING. Son las 6AM y ya gané. Mientras ellos duermen, yo construyo mi legado físico, mental y financiero. La disciplina de hoy es la libertad de mañana. Si fallo 1 regla hoy, vuelvo a Día 0. No hay grises. Skin in the game total. Mi estándar es Nivel 5 LEYENDA y no negocio con la mediocridad. Cada minuto cuenta. Cada decisión suma o resta.`,
+        
+        `6AM: El mundo duerme, yo ataco. Mi competencia son mis excusas de ayer. Hoy ejecuto el plan sin emoción. Frío. Calculado. Imparable. El dolor del esfuerzo es temporal, el orgullo del resultado es permanente. No busco motivación, construyo sistemas. Los rituales no se negocian. La estabilidad es mi activo #1. Día tras día hasta que sea inevitable.`,
+        
+        `CEO 20Y MODE ON. Mi vida es una empresa y yo soy 100% responsable del P&L. Invierto en activos: salud, mente, relaciones, capital. Elimino pasivos: distracciones, quejas, gente tóxica. Hoy cierro 3 micro-victorias antes de las 9AM. El momentum se construye a las 6AM. Si no duele, no cuenta. Hard Reset es mi seguro contra la mediocridad.`
       ];
       const s = spiths[Math.floor(Math.random()*spiths.length)];
       spithTexto.textContent = s;
-      cerebro.spiths.unshift(s);
+      cerebro.spiths.unshift(s); 
       if (cerebro.spiths.length>10) cerebro.spiths.pop();
       localStorage.setItem('spiths20y', JSON.stringify(cerebro.spiths));
-      cerebro.renderSpithHist();
-      navigator.clipboard.writeText(s).then(() => {
-        alert('SPITH copiado ✅ Pégalo donde quieras o dilo al espejo');
-      }).catch(()=>{});
     }
+    
     function pedirCoach() {
       const s = cerebro.calcular_stability();
-      coachTexto.textContent = s >= 7? `Stability ${s*10}%. Sigue así.` : `Stability ${s*10}%. Fallaste. Ejecuta o Reset.`;
+      const dia = cerebro.dia;
+      const consejos = [];
+      
+      if(s >= 8) consejos.push(`1. STABILITY ${s*10}%: Elite. Ahora el juego es mantener. Revisa tus rituales y elimina 1 fricción. ¿Qué te cuesta más de las 6AM? Optimízalo.`);
+      else if(s >= 5) consejos.push(`1. STABILITY ${s*10}%: Vas bien pero frágil. El check que más fallas es tu talón de Aquiles. Pon alarma 5min antes solo para ese check.`);
+      else consejos.push(`1. STABILITY ${s*10}%: Zona roja. Hard Reset mañana si no cierras 22PM hoy. No negocies. Una regla rota = Día 0. Duele pero funciona.`);
+      
+      if(dia < 7) consejos.push(`2. DÍA ${dia}: Estás en la fase de instalación. Tu cerebro quiere sabotear. No escuches. Ejecuta mecánico. Los primeros 21 días construyen la autopista neural.`);
+      else if(dia < 30) consejos.push(`2. DÍA ${dia}: Ya hay momentum. Ahora viene el valle. Cuando no veas resultados, duplica la disciplina. Los compuestos tardan en verse.`);
+      else consejos.push(`2. DÍA ${dia}: Modo LEYENDA. Ya eres el 1%. Ahora tu trabajo es enseñar el sistema. Cuando enseñas, aprendes 2 veces. Documenta.`);
+      
+      const acciones = [
+        `3. ACCIÓN HOY: Haz 1 llamada incómoda que llevas posponiendo. 5min de incomodidad = 5 años de ventaja.`,
+        `3. ACCIÓN HOY: Escribe tu objetivo #1 en papel. Pégalo donde lo veas 10 veces/día. Tu mente sigue lo que ve repetido.`,
+        `3. ACCIÓN HOY: Elimina 1 app que te roba >15min/día. Recupera 90h/año. Tiempo es el único activo que no vuelve.`
+      ];
+      consejos.push(acciones[dia % 3]);
+      
+      coachTexto.innerHTML = consejos.join('<br><br>');
+      
+      const hist = JSON.parse(localStorage.getItem('coachHist20y') || '[]');
+      hist.unshift({dia: dia, texto: consejos.join(' | ')});
+      if(hist.length > 30) hist.pop();
+      localStorage.setItem('coachHist20y', JSON.stringify(hist));
     }
+    
     function exportBackup() {
       const data = JSON.stringify(localStorage); const blob = new Blob([data], {type:'application/json'});
       const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = '20y-pulse-backup.json'; a.click();
@@ -397,12 +441,44 @@
     function factoryReset() {
       if (confirm('¿BORRAR TODO?')) { localStorage.clear(); location.reload(); }
     }
-    [misionAnual,q1_1,q1_2,q1_3,q2_1,q2_2,q2_3,q3_1,q3_2,q3_3,q4_1,q4_2,q4_3,habito1,habito2,habito3,h1check,h2check,h3check,notas].forEach(el => el.addEventListener('change', () => cerebro.save()));
+
+    function guardarPerfil() {
+      const perfil = {
+        nombre: document.getElementById('nombre').value,
+        edad: document.getElementById('edad').value,
+        ciudad: document.getElementById('ciudad').value,
+        lema: document.getElementById('lema').value,
+        vision: document.getElementById('vision').value,
+        foto: document.getElementById('foto').value
+      };
+      localStorage.setItem('perfil20y', JSON.stringify(perfil));
+      ceoNombreView.textContent = perfil.nombre || 'SAMUEL';
+      document.getElementById('ceo-name').textContent = `CEO 20Y: ${perfil.nombre || 'SAMUEL'}`;
+      alert('Perfil guardado');
+    }
+
+    [habito1,habito2,habito3,h1check,h2check,h3check].forEach(el => el.addEventListener('change', () => cerebro.save()));
+    [misionAnual,q1,q2,q3,q4,notas].forEach(el => el.addEventListener('change', () => cerebro.save()));
+
     cerebro.load();
     if (localStorage.getItem('notif20y') === 'true') {
       estadoNotif.textContent = 'Activadas ✅';
       programarNotificaciones();
     }
+    
+    document.addEventListener('DOMContentLoaded', () => {
+      const p = JSON.parse(localStorage.getItem('perfil20y') || '{}');
+      if(p.nombre) document.getElementById('nombre').value = p.nombre;
+      if(p.edad) document.getElementById('edad').value = p.edad;
+      if(p.ciudad) document.getElementById('ciudad').value = p.ciudad;
+      if(p.lema) document.getElementById('lema').value = p.lema;
+      if(p.vision) document.getElementById('vision').value = p.vision;
+      if(p.foto) document.getElementById('foto').value = p.foto;
+      if(p.nombre) {
+        ceoNombreView.textContent = p.nombre;
+        document.getElementById('ceo-name').textContent = `CEO 20Y: ${p.nombre}`;
+      }
+    });
   </script>
 </body>
 </html>
